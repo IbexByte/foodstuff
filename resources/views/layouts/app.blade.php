@@ -59,7 +59,7 @@
                         <div class="p-4">
 
                             <!-- LOGO -->
-                            <a class="flex items-center text-white space-x-4" href="">
+                            <a class="flex items-center text-white space-x-4" href="/">
                                 <img class="h-24" src="{{ asset('storage/logo2.png') }}" alt="">
                                 <span class="text-2xl font-bold">تموين المستقبل</span>
                             </a>
@@ -107,39 +107,49 @@
                                     </span>
                                     <span>الصفقات </span>
                                 </a>
-                                <a href="#"
-                                    class="block bg-lime-100 shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
+                                <a href="{{ route('customer.index') }}"
+                                    class="  {{ request()->is('dashboard/customer*') ? 'bg-lime-400' : 'bg-lime-100' }} block   shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
                                     <span class="material-symbols-outlined">
                                         recent_actors
                                     </span>
                                     <span class="mx-4"> المتعاملين </span>
                                 </a>
-                                <a href="#"
-                                    class="block bg-lime-100 shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
+                                <a href="{{ route('users.index') }}"
+                                    class="  {{ request()->is('dashboard/users*') ? 'bg-lime-400' : 'bg-lime-100' }} block bg-lime-100 shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
                                     <span class="material-symbols-outlined">
                                         admin_panel_settings
                                     </span>
                                     <span>الأعضاء المشرفين </span>
                                 </a>
-                                <a href="#"
-                                    class="block bg-lime-100 shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
+                                <a href="{{ route('shipments.index') }}"
+                                    class=" block  {{ request()->is('dashboard/shipments*') ? 'bg-lime-400' : 'bg-lime-100' }} shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
                                         </path>
                                     </svg>
-                                    <span>لوحة الإدارة </span>
+                                    <span> الشحنات </span>
                                 </a>
-                                <a href="#"
-                                    class="block bg-lime-100 shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
+                                <a href="{{ route('statutes.index', ['id'=>1]) }}"
+                                    class="block  {{ request()->is('dashboard/statutes*') ? 'bg-lime-400' : 'bg-lime-100' }} shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
                                         </path>
                                     </svg>
-                                    <span>لوحة الإدارة </span>
+                                    <span>الحالات  </span>
+                                </a>
+                                <a href="{{ route('types.index') }}"
+                                    class="block  {{ request()->is('dashboard/types*') ? 'bg-lime-400' : 'bg-lime-100' }} shadow-lg  py-2.5 px-4 flex items-center space-x-4    hover:bg-lime-400 hover:text-white rounded">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    <span>الأنواع </span>
                                 </a>
                                 <!-- DROPDOWN LINK -->
                                 <div class="block" x-data="{ open: false }">
@@ -167,11 +177,11 @@
                                     </div>
                                     <div x-show="open"
                                         class="text-sm border-l-2 border-gray-800 mx-6 my-2.5 px-2.5 flex flex-col gap-y-1">
-                                        <a href="#"
+                                        <a href="{{ route('job_titles.index') }}"
                                             class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
-                                            الأصناف
+                                            المسميات الوظيفية
                                         </a>
-                                        <a href="#"
+                                        <a href="{{ route('tasks.index') }}"
                                             class="block py-2 px-4 hover:bg-gray-800 hover:text-white rounded">
                                             المهام
                                         </a>

@@ -100,7 +100,7 @@ class DealController extends Controller
     
         $deal->save();
     
-        return redirect()->route('deal.index')->with('success', 'Deal created successfully.');
+        return redirect()->route('deal.index')->with('success', 'تم حفظ الصفقةبنجاح.');
     }
     
     
@@ -192,7 +192,7 @@ class DealController extends Controller
     
         $deal->save();
     
-        return redirect()->route('deal.index')->with('success', 'Deal created successfully.');
+        return redirect()->route('deal.index')->with('success', 'تم تعديل الصفقة بنجاح.');
 
     }
 
